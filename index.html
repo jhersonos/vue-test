@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<style type="text/css">
+		.flip-list-move {
+		  transition: transform 1s;
+		}
+	</style>
+</head>
+<body>	
+	<div class="container wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h1>Reorder</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="form-row">
+					<div class="form-group col-md-3">
+						<input type="text" class="form-control" name="letters" v-model="letters" @keyup="key">
+					</div>				
+					<div class="form-group col-md-3">
+						<button type="submit" class="btn btn-outline-success" @click="order">ordenar</button>       
+					</div>
+				</div>
+				<transition-group name="flip-list" tag="ul">
+					<li v-for="a in all" v-bind:key="a">
+					  {{ a }}
+					</li>
+				</transition-group>
+			</div>
+		</div>
+	</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
